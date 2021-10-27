@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    class  Person {
+        //Коструктор - метод, который вызывается при создании объекта класса
+        constructor(name, year) {
+            this.name = name;
+            this.year = year;
+        }
+
+         static compareAge(man1,man2){
+            if (man1.year > man2.year) {
+                console.log(`${man1.name} младше пользователя ${man2.name} на ${man1.name} на ${man1.year - man2.year}`)
+            } else {
+                console.log(`${man1.name} младше пользователя ${man1.name} на ${man2.name} на ${man2.year - man1.year}`)
+            }
+        }
+
+        info(){
+            return `Пользователь ${this.name} родился в ${this.year}`;
+        }
+
+        getAge () {
+            return new Date().getFullYear() - this.year;
+
+        }
+    }
+
+
+    let user = new Person('Иван', 1990);
+    let user2 = new Person('Петр', 1982);
+    Person.compareAge(user,user2)
+    // console.log(user.getAge());
+</script>
+</body>
+</html>
