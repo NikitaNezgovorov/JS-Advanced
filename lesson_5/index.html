@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="app">
+    <h3> {{ name }} </h3>
+
+    <input type="text" v-model:about="name">
+    <p> {{sayHello()}}</p>
+    <button @click="sayHello()"> OK </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<script>
+
+    const app = new Vue({
+        el: "#app",
+        data: {
+            name: 'Иван',
+
+        },
+        methods: {
+            sayHello() {
+                return `добрый день, ${this.name}`
+            }
+        }
+    })
+</script>
+</body>
+</html>
